@@ -1,31 +1,51 @@
-import { Card } from './styles/Card.styled'
+import { useState } from 'react'
+import { nanoid } from 'nanoid'
 
 import { ThemeProvider } from 'styled-components'
+import { Theme } from './styles/Theme'
+import { GlobalStyles } from './styles/GlobalStyles'
 
-import googleKeepLogo from './assets/google-keep-icon.png'
-import reactLogo from './assets/react-icon.png'
-import firebaseLogo from './assets/firebase-icon.png'
-import Note from './components/Note'
+import Notes from './components/Notes'
+import Form from './components/Form'
+import Header from './components/Header'
 
-const theme = {
-	colors: {
-		white: '#fffff',
-		grey: '#e3e3e3',
-		black: '#000000',
+const DUMMY_NOTES = [
+	{
+		id: 'note-' + nanoid(),
+		title: 'Hello World!',
+		content: 'This is my first note.',
 	},
-}
+	{
+		id: 'note-' + nanoid(),
+		title: 'Hey there!',
+		content: 'This is my second note.',
+	},
+	{
+		id: 'note-' + nanoid(),
+		title: 'Hey Hi Hello!',
+		content: 'This is my third note.',
+	},
+]
 
 function App() {
+	const [notes, setNotes] = useState(DUMMY_NOTES)
+
+	const addNoteHandler = (title, content) => {
+		const newNote = { id: 'note-' + nanoid(), title: title, content: content }
+		setNotes([...notes, newNote])
+	}
+
+	const deleteNoteHandler = id => {
+		const remainingNotes = notes.filter(note => id !== note.id)
+		setNotes(remainingNotes)
+	}
+
 	return (
-		<ThemeProvider theme={theme}>
-			<Card>
-				<img src={googleKeepLogo} alt='' />
-				<span>+</span>
-				<img src={reactLogo} alt='' />
-				<span>+</span>
-				<img src={firebaseLogo} alt='' />
-			</Card>
-			<Note />
+		<ThemeProvider theme={Theme}>
+			<GlobalStyles />
+			<Header />
+			<Form addNote={addNoteHandler} />
+			<Notes notes={notes} onDeleteNote={deleteNoteHandler} />
 		</ThemeProvider>
 	)
 }
