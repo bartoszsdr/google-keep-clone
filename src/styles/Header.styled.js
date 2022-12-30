@@ -5,11 +5,17 @@ export const StyledHeader = styled.header`
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto 3rem;
-	img {
-		width: 35px;
+	img:nth-child(1) {
+		width: 48px;
+	}
+	img:nth-child(3) {
+		width: 45px;
+	}
+	img:nth-child(5) {
+		width: 37px;
 	}
 	span {
-		margin: 0 1rem;
-		font-size: 1.5rem;
+		margin: 0 1.2rem;
+		font-size: 1.8rem;
 	}
 `
