@@ -6,4 +6,7 @@ export const StyledNotes = styled.div`
 	grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr));
 	position: relative;
 	margin: 5rem auto;
+	div:last-child {
+		margin-bottom: 2rem;
+	}
 `

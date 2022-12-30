@@ -30,11 +30,9 @@ const Form = props => {
 	// Handle the actual input fields
 	const changeTitleHandler = e => {
 		setTitle(e.target.value)
-		console.log(title)
 	}
 	const changeContentHandler = e => {
 		setContent(e.target.value)
-		console.log(content)
 	}
 	//
 

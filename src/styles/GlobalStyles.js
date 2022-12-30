@@ -1,6 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
+	@font-face {
+  		font-family: 'ProductSans';
+  		font-style: normal;
+  		src: local('ProductSans'), url(../fonts/ProductSans-Regular.woff) format('woff');
+	}
+	
 	*,
 	*::after,
 	*::before {
@@ -20,7 +26,7 @@ export const GlobalStyles = createGlobalStyle`
 	}
 
 	body{
-		font-family: 'Roboto', sans-serif;
+		font-family: 'ProductSans', sans-serif;
 		background-color: ${({ theme }) => theme.colors.lightGrey};
 		padding: 3rem;
 	}

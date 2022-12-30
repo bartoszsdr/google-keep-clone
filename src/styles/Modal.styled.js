@@ -2,23 +2,22 @@ import styled from 'styled-components'
 
 export const StyledBackdrop = styled.div`
 	position: fixed;
+	height: 100%;
+	width: 100%;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100vh;
 	z-index: 20;
-	background-color: rgba(0, 0, 0, 0.75);
+	background-color: rgba(0, 0, 0, 0.7);
 `
 
 export const StyledModal = styled.div`
 	position: fixed;
-	top: 20vh;
-	left: 5%;
-	width: 90%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 85%;
 	background-color: white;
-	padding: 1rem;
-	border-radius: 14px;
+	border-radius: 10px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 	z-index: 30;
-	animation: slide-down 300ms ease-out forwards;
 `

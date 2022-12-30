@@ -14,18 +14,23 @@ export const StyledNote = styled.div`
 		box-shadow: 0px 0px 3px 0px rgba(169, 169, 169, 1);
 	}
 	h2 {
+		font-size: 2rem;
 		margin-bottom: 1rem;
 	}
-	img {
+	p {
+		font-size: 1.5rem;
+	}
+	button {
 		position: absolute;
 		right: 0;
 		top: 0;
 		padding: 0.5rem;
 		cursor: pointer;
-		opacity: 0;
+		background-color: transparent;
 		transition: opacity 0.2s ease-in-out;
+		opacity: 0;
 	}
-	&:hover img {
+	&:hover button {
 		opacity: 1;
 	}
 `

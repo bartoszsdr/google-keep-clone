@@ -5,9 +5,9 @@ import { ThemeProvider } from 'styled-components'
 import { Theme } from './styles/Theme'
 import { GlobalStyles } from './styles/GlobalStyles'
 
-import Notes from './components/Notes'
-import Form from './components/Form'
 import Header from './components/Header'
+import Form from './components/Form'
+import Notes from './components/Notes'
 
 const DUMMY_NOTES = [
 	{
@@ -40,12 +40,22 @@ function App() {
 		setNotes(remainingNotes)
 	}
 
+	const editNoteHandler = (id, newTitle, newContent) => {
+		const editedNoteList = notes.map(note => {
+			if (id === note.id) {
+				return { ...note, title: newTitle, content: newContent }
+			}
+			return note
+		})
+		setNotes(editedNoteList)
+	}
+
 	return (
 		<ThemeProvider theme={Theme}>
 			<GlobalStyles />
 			<Header />
 			<Form addNote={addNoteHandler} />
-			<Notes notes={notes} onDeleteNote={deleteNoteHandler} />
+			<Notes notes={notes} onEditNote={editNoteHandler} onDeleteNote={deleteNoteHandler} />
 		</ThemeProvider>
 	)
 }
