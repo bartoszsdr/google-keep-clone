@@ -9,22 +9,22 @@ export const StyledNote = styled.div`
 	cursor: default;
 	transition: all 0.2s ease-in-out;
 	overflow-wrap: break-word;
-	color: ${({ theme }) => theme.colors.white};
+	color: ${props => props.theme.colors.black};
 	&:hover {
 		box-shadow: 0px 0px 3px 0px rgba(169, 169, 169, 1);
 	}
 	h2 {
-		font-size: 2rem;
+		font-size: ${props => props.theme.fonts.big};
 		margin-bottom: 1rem;
 	}
 	p {
-		font-size: 1.5rem;
+		font-size: ${props => props.theme.fonts.medium};
 	}
 	button {
 		position: absolute;
 		right: 0;
 		top: 0;
-		padding: 0.5rem;
+		padding: 1rem;
 		cursor: pointer;
 		background-color: transparent;
 		transition: opacity 0.2s ease-in-out;

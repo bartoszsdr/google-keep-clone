@@ -8,7 +8,7 @@ export const Theme = {
 	},
 	fonts: {
 		small: '1.2rem',
-		medium: '2rem',
-		big: '3rem',
+		medium: '1.6rem',
+		big: '2rem',
 	},
 }

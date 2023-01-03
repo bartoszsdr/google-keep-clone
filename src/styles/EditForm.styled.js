@@ -18,27 +18,29 @@ export const StyledEditForm = styled.form`
 		width: 100%;
 		outline: 0;
 		border: none;
-		font-size: 1.8rem;
-		color: ${({ theme }) => theme.colors.black};
+
+		color: ${props => props.theme.colors.black};
 	}
 	input {
 		margin-bottom: 1rem;
-		font-size: 2rem;
+		font-size: ${props => props.theme.fonts.big};
 		font-weight: bold;
 	}
 	textarea {
 		height: 75%;
+		font-size: ${props => props.theme.fonts.medium};
 	}
 	.delete-btn {
 		left: 0;
 		padding: 0.8rem 2.4rem;
 		img {
-			height: 20px;
+			height: 18px;
 		}
 	}
 	.confirm-btn {
 		right: 0;
 		padding: 1.2rem 2.4rem;
+		font-size: ${props => props.theme.fonts.small};
 		font-weight: bold;
 	}
 	.delete-btn,

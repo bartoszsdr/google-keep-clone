@@ -1,12 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
-	@font-face {
-  		font-family: 'ProductSans';
-  		font-style: normal;
-  		src: local('ProductSans'), url(../fonts/ProductSans-Regular.woff) format('woff');
-	}
-	
 	*,
 	*::after,
 	*::before {
@@ -26,8 +20,8 @@ export const GlobalStyles = createGlobalStyle`
 	}
 
 	body{
-		font-family: 'ProductSans', sans-serif;
-		background-color: ${({ theme }) => theme.colors.lightGrey};
+		font-family: 'Inter', sans-serif;
+		background-color: ${props => props.theme.colors.lightGrey};;
 		padding: 3rem;
 	}
 
@@ -53,5 +47,9 @@ export const GlobalStyles = createGlobalStyle`
 
 	textarea {
 		resize: none;
+	}
+
+	li{
+		list-style: none;
 	}
 `

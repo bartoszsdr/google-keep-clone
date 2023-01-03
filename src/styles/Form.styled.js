@@ -11,7 +11,7 @@ export const StyledForm = styled.form`
 	padding: 1.5rem;
 	border-radius: 8px;
 	margin: 0 auto 5rem;
-	background-color: ${({ theme }) => theme.colors.white};
+	background-color: ${props => props.theme.colors.white};
 	background-color: white;
 	z-index: 10;
 	box-shadow: 0px 0px 3px 0px rgba(169, 169, 169, 1);
@@ -23,20 +23,21 @@ export const StyledForm = styled.form`
 		padding: 0;
 		outline: 0;
 		border: none;
-		font-size: 1.6rem;
-		color: ${({ theme }) => theme.colors.black};
+		color: ${props => props.theme.colors.black};
 	}
 	input {
+		font-size: ${props => props.theme.fonts.big};
 		font-weight: bold;
 		margin-bottom: 1rem;
 	}
 	textarea {
 		min-height: 100px;
 		max-height: 200px;
+		font-size: ${props => props.theme.fonts.medium};
 	}
 	input::placeholder,
 	textarea::placeholder {
-		color: ${({ theme }) => theme.colors.darkGrey};
+		color: ${props => props.theme.colors.darkGrey};
 		font-weight: bold;
 	}
 	button {
@@ -52,7 +53,8 @@ export const StyledForm = styled.form`
 		border-radius: 50%;
 		width: 36px;
 		height: 36px;
-		font-size: 2.4rem;
+		font-size: 2.5rem;
+		padding-bottom: 0.2rem;
 		line-height: 1;
 		text-align: center;
 	}
