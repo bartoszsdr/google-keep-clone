@@ -1,20 +1,18 @@
-<p align="center"><img align="center" width="300" src="https://i.imgur.com/9LrE2pO.png"/></p>
-<h3 align="center">Notes App built with React and Firebase. It's a clone of Google Keep.</h3>
-<hr>
+<h1 align="center">
+  <img alt="cgapp logo" src="https://i.imgur.com/WuEIXcZ.png" width="250px"/><br/><br/>
+  Notes app built with React and Firebase. A clone of Google Keep.
+</h1>
+<p align="center">Add notes with title and description, edit and delete them.</p>
 
-# Tools
+## ⚡️ Technology
 
 - [React](https://reactjs.org/)
 - [Firebase](https://firebase.google.com/)
 - [styled-components](https://styled-components.com/)
 - [Vite](https://vitejs.dev/)
+- [nanoid](https://github.com/ai/nanoid)
 
-# Description
+## 🔍 Preview
+<p align="left"><img align="center" width="500" src="https://i.imgur.com/AHsU26J.png"/></p><br/><br/>
 
-A user can add notes with title and description. The note is added to the list. The user can click on the note to display a modal with an edit and delete option.
-
-# Preview
-
-<p align="center"><img align="center" width="1000" src=""/></p>
-<br><br>
-<p align="center">Made with ❤️ and JavaScript.</p>
+<p align="center"><code>Made with ❤️ and JavaScript.</code></p>
