@@ -4,8 +4,8 @@ import Modal from './Modal'
 import { StyledNote } from '../styles/Note.styled'
 import { StyledEditForm } from '../styles/EditForm.styled'
 
-import editIcon from '../assets/edit-icon.svg'
-import deleteIcon from '../assets/delete-icon.svg'
+import editIcon from '../assets/icons/edit.svg'
+import deleteIcon from '../assets/icons/delete.svg'
 
 const Note = props => {
 	const [isEditing, setIsEditing] = useState(false)
@@ -42,10 +42,11 @@ const Note = props => {
 	const editingTemplate = (
 		<Modal onClose={handleSubmit}>
 			<StyledEditForm onSubmit={handleSubmit}>
-				<input id={props.id} placeholder='Title' value={newTitle} onChange={handleTitleChange} />
+				<input id={props.id} placeholder='Title' maxLength='20' value={newTitle} onChange={handleTitleChange} />
 				<textarea
 					id={props.id}
 					placeholder='Take a note...'
+					maxLength='100'
 					value={newContent}
 					onChange={handleContentChange}></textarea>
 

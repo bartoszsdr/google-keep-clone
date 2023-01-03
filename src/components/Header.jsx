@@ -1,17 +1,17 @@
-import googleKeepIcon from '../assets/google-keep-icon.png'
-import reactIcon from '../assets/react-icon.png'
-import firebaseIcon from '../assets/firebase-icon.png'
+import keepLogo from '../assets/images/keep-logo.png'
+import reactLogo from '../assets/images/react-logo.png'
+import firebaseLogo from '../assets/images/firebase-logo.png'
 
 import { StyledHeader } from '../styles/Header.styled'
 
 const Header = () => {
 	return (
 		<StyledHeader>
-			<img src={googleKeepIcon} alt='Google Keep' />
+			<img src={keepLogo} alt='Google Keep' />
 			<span>+</span>
-			<img src={reactIcon} alt='React' />
+			<img src={reactLogo} alt='React' />
 			<span>+</span>
-			<img src={firebaseIcon} alt='Firebase' />
+			<img src={firebaseLogo} alt='Firebase' />
 		</StyledHeader>
 	)
 }

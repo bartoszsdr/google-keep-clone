@@ -10,7 +10,6 @@ const Form = props => {
 	const hideInputHandler = () => {
 		setShowInput(false)
 	}
-	//
 
 	// Handle form submition depending on a click on the button
 	const [title, setTitle] = useState('')
@@ -25,7 +24,6 @@ const Form = props => {
 		setContent('')
 		setShowInput(false)
 	}
-	//
 
 	// Handle the actual input fields
 	const changeTitleHandler = e => {
@@ -34,16 +32,18 @@ const Form = props => {
 	const changeContentHandler = e => {
 		setContent(e.target.value)
 	}
-	//
 
 	return (
 		<>
 			{showInput && <StyledFormBackdrop onClick={hideInputHandler}></StyledFormBackdrop>}
 			<StyledForm onSubmit={addNoteHandler}>
-				{showInput && <input name='title' placeholder='Title' onChange={changeTitleHandler} value={title} />}
+				{showInput && (
+					<input name='title' placeholder='Title' maxLength='20' onChange={changeTitleHandler} value={title} />
+				)}
 				<textarea
 					name='content'
 					placeholder='Take a note...'
+					maxLength='100'
 					onChange={changeContentHandler}
 					onClick={showInputHandler}
 					value={content}></textarea>

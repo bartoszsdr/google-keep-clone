@@ -6,7 +6,7 @@ import { Theme } from './styles/Theme'
 import { GlobalStyles } from './styles/GlobalStyles'
 
 import Header from './components/Header'
-import Form from './components/Form'
+import Create from './components/Create'
 import Notes from './components/Notes'
 
 const DUMMY_NOTES = [
@@ -54,7 +54,7 @@ function App() {
 		<ThemeProvider theme={Theme}>
 			<GlobalStyles />
 			<Header />
-			<Form addNote={addNoteHandler} />
+			<Create addNote={addNoteHandler} />
 			<Notes notes={notes} onEditNote={editNoteHandler} onDeleteNote={deleteNoteHandler} />
 		</ThemeProvider>
 	)
