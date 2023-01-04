@@ -12,6 +12,7 @@ const Note = props => {
 	const [newTitle, setNewTitle] = useState(props.title)
 	const [newContent, setNewContent] = useState(props.content)
 
+	// Listen to keyup events and set the state value
 	const handleTitleChange = e => {
 		setNewTitle(e.target.value)
 	}
@@ -19,16 +20,37 @@ const Note = props => {
 		setNewContent(e.target.value)
 	}
 
+	// Set the new title and content in editing note. Delete it if empty.
 	const handleSubmit = e => {
 		e.preventDefault()
 		if (!newTitle.trim() && !newContent.trim()) {
 			setIsEditing(false)
-			return props.deleteNote(props.id)
+			// return props.deleteNote(props.id)
+			return deleteNote(props.id)
 		}
-		props.editNote(props.id, newTitle, newContent)
+		editNote(props.id, newTitle, newContent)
 		setIsEditing(false)
 	}
 
+	// Fetch the note by id and update its content
+	const editNote = (id, title, content) => {
+		fetch(`https://keep-react-512ea-default-rtdb.firebaseio.com/notes/${id}.json`, {
+			method: 'PUT',
+			body: JSON.stringify({
+				title: title,
+				content: content,
+			}),
+		})
+	}
+
+	// Fetch the note by id and delete it
+	const deleteNote = id => {
+		fetch(`https://keep-react-512ea-default-rtdb.firebaseio.com/notes/${id}.json`, {
+			method: 'DELETE',
+		})
+	}
+
+	// Display when not editing
 	const viewTemplate = (
 		<StyledNote onClick={() => setIsEditing(true)}>
 			<button onClick={() => setIsEditing(true)}>
@@ -39,6 +61,7 @@ const Note = props => {
 		</StyledNote>
 	)
 
+	// Display when editing
 	const editingTemplate = (
 		<Modal onClose={handleSubmit}>
 			<StyledEditForm onSubmit={handleSubmit}>
@@ -50,7 +73,7 @@ const Note = props => {
 					value={newContent}
 					onChange={handleContentChange}></textarea>
 
-				<button className='delete-btn' type='button' onClick={() => props.deleteNote(props.id)}>
+				<button className='delete-btn' type='button' onClick={() => deleteNote(props.id)}>
 					<img src={deleteIcon} alt='Delete' />
 				</button>
 				<button className='confirm-btn' type='submit'>

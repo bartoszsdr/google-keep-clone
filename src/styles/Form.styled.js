@@ -58,6 +58,21 @@ export const StyledForm = styled.form`
 		line-height: 1;
 		text-align: center;
 	}
+	@media (min-width: 768px) {
+		input {
+			font-size: ${props => props.theme.fonts.large};
+		}
+		textarea {
+			font-size: ${props => props.theme.fonts.big};
+		}
+		button {
+			bottom: -22px;
+			width: 45px;
+			height: 45px;
+			font-size: 3rem;
+			padding-bottom: 0.3rem;
+		}
+	}
 `
 
 export const StyledFormBackdrop = styled.div`

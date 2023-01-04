@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 export const StyledNote = styled.div`
 	position: relative;
-	padding: 20px;
+	height: 100%;
+	padding: 2rem;
 	background-color: #fff;
 	border: 1px solid #dadce0;
 	border-radius: 8px;
@@ -14,8 +15,8 @@ export const StyledNote = styled.div`
 		box-shadow: 0px 0px 3px 0px rgba(169, 169, 169, 1);
 	}
 	h2 {
-		font-size: ${props => props.theme.fonts.big};
 		margin-bottom: 1rem;
+		font-size: ${props => props.theme.fonts.big};
 	}
 	p {
 		font-size: ${props => props.theme.fonts.medium};
@@ -32,5 +33,15 @@ export const StyledNote = styled.div`
 	}
 	&:hover button {
 		opacity: 1;
+	}
+	@media (min-width: 768px) {
+		padding: 3rem;
+		h2 {
+			margin-bottom: 2rem;
+			font-size: ${props => props.theme.fonts.large};
+		}
+		p {
+			font-size: ${props => props.theme.fonts.big};
+		}
 	}
 `

@@ -7,7 +7,8 @@ export const StyledBackdrop = styled.div`
 	top: 0;
 	left: 0;
 	z-index: 20;
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(1px);
 `
 
 export const StyledModal = styled.div`
@@ -20,4 +21,7 @@ export const StyledModal = styled.div`
 	border-radius: 10px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 	z-index: 30;
+	@media (min-width: 768px) {
+		width: 50%;
+	}
 `

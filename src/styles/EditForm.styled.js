@@ -50,4 +50,20 @@ export const StyledEditForm = styled.form`
 		margin: 1rem;
 		border-radius: 3px;
 	}
+	@media (min-width: 768px) {
+		input {
+			font-size: ${props => props.theme.fonts.large};
+		}
+		textarea {
+			font-size: ${props => props.theme.fonts.big};
+		}
+		.delete-btn {
+			img {
+				height: 22px;
+			}
+		}
+		.confirm-btn {
+			font-size: ${props => props.theme.fonts.medium};
+		}
+	}
 `

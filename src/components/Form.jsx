@@ -19,13 +19,25 @@ const Form = props => {
 		if (!title.trim() && !content.trim()) {
 			return
 		}
-		props.addNote(title, content)
+		// props.addNote(title, content)
+		createNote(title, content)
 		setTitle('')
 		setContent('')
 		setShowInput(false)
 	}
 
-	// Handle the actual input fields
+	// Fetch the list of notes and add entry
+	const createNote = (title, content) => {
+		fetch('https://keep-react-512ea-default-rtdb.firebaseio.com/notes.json', {
+			method: 'POST',
+			body: JSON.stringify({
+				title: title,
+				content: content,
+			}),
+		})
+	}
+
+	// Listen to keyup events and set the state value
 	const changeTitleHandler = e => {
 		setTitle(e.target.value)
 	}
@@ -43,7 +55,7 @@ const Form = props => {
 				<textarea
 					name='content'
 					placeholder='Take a note...'
-					maxLength='100'
+					maxLength='300'
 					onChange={changeContentHandler}
 					onClick={showInputHandler}
 					value={content}></textarea>
